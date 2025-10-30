@@ -6,14 +6,34 @@
 	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Responsive Healthcare Website</title>
-  <link rel="stylesheet" crossorigin href="/assets/index-BiIAWzCR.css">
+	<link rel="stylesheet" crossorigin href="/assets/index-BiIAWzCR.css">
   <script type="module" crossorigin src="/assets/index-Cdng-WYY.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-BiIAWzCR.css">
 </head>
 
 <body>
 	<div id="root"></div>
+	<script type='text/javascript'>
+		function initEmbeddedMessaging() {
+			try {
+				embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
+				embeddedservice_bootstrap.init(
+					'00DgL000006MIyv',
+					'HealthCareSiteNetlify',
+					'https://orgfarm-7462475774-dev-ed.develop.my.site.com/ESWHealthCareSiteNetlify1761819246703',
+					{
+						scrt2URL: 'https://orgfarm-7462475774-dev-ed.develop.my.salesforce-scrt.com'
+					}
+				);
+			} catch (err) {
+				console.error('Error loading Embedded Messaging: ', err);
+			}
+		};
+	</script>
+	<script type='text/javascript'
+		src='https://orgfarm-7462475774-dev-ed.develop.my.site.com/ESWHealthCareSiteNetlify1761819246703/assets/js/bootstrap.min.js'
+		onload='initEmbeddedMessaging()'></script>
 </body>
 
 </html>
