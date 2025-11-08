@@ -8,7 +8,91 @@
 	<title>Responsive Healthcare Website</title>
 	<script type="module" src="/src/main.tsx"></script>
 	<link rel="stylesheet" crossorigin href="/assets/index-BiIAWzCR.css">
-	<Style>
+	<style type="text/css">
+		.embeddedServiceHelpButton .helpButton .uiButton {
+			background-color: #059669;
+			font-family: "Arial", sans-serif;
+		}
+
+		.embeddedServiceHelpButton .helpButton .uiButton:focus {
+			outline: 1px solid #059669;
+		}
+
+		/* ✅ Move chat button to left side */
+		.embeddedServiceHelpButton {
+			left: 20px !important;
+			right: auto !important;
+			bottom: 20px !important;
+			position: fixed !important;
+		}
+
+		/* ✅ Move chat iframe launcher to left */
+		iframe.embeddedMessagingFrame {
+			left: 20px !important;
+			right: auto !important;
+			bottom: 20px !important;
+			position: fixed !important;
+		}
+
+		/* ✅ Move chat window (sidebar) to left side */
+		.embeddedServiceSidebar,
+		.embeddedServiceSidebarContainer {
+			left: 20px !important;
+			right: auto !important;
+			bottom: 100px !important;
+			width: 720px !important;
+			max-width: 90vw !important;
+			height: 95vh !important;
+			max-height: 1275px !important;
+			min-height: 900px !important;
+		}
+
+		/* ✅ Mobile responsive fix */
+		@media only screen and (max-width: 768px) {
+
+			.embeddedServiceSidebar,
+			.embeddedServiceSidebarContainer {
+				width: calc(100vw - 40px) !important;
+				left: 20px !important;
+				right: auto !important;
+				height: 80vh !important;
+				min-height: 500px !important;
+			}
+		}
+
+		/* ✅ Style chat button */
+		.embeddedServiceHelpButton .helpButton {
+			width: 105px !important;
+			height: 105px !important;
+		}
+
+		.embeddedServiceHelpButton .helpButton .uiButton {
+			border-radius: 50% !important;
+			box-shadow: 0 9px 24px rgba(5, 150, 105, 0.5) !important;
+			font-size: 27px !important;
+			transition: all 0.3s ease;
+		}
+
+		.embeddedServiceHelpButton .helpButton .uiButton:hover {
+			background-color: #047857 !important;
+			transform: scale(1.08);
+		}
+
+		.embeddedServiceSidebarHeader {
+			background-color: #059669 !important;
+			padding: 24px !important;
+			font-size: 1.2em !important;
+		}
+
+		.embeddedServiceLiveAgentStateChatItem,
+		.embeddedServiceLiveAgentStateChatInputFooter {
+			width: 100% !important;
+		}
+
+		.messageArea {
+			height: calc(100% - 120px) !important;
+		}
+
 		.embeddedMessagingConversationButtonWrapper .embeddedMessagingConversationButton {
 			position: fixed;
 			bottom: var(--eswButtonBottom, 25px);
@@ -30,7 +114,7 @@
 			font-size: var(--eswIconFontSize, 16px);
 			box-sizing: border-box
 		}
-	</Style>
+	</style>
 </head>
 
 <body>
