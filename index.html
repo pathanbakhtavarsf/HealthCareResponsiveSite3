@@ -47,6 +47,16 @@
 			min-height: 900px !important;
 		}
 
+		/* ✅ Ensure minimized chat button (conversation launcher) stays left */
+		.embeddedMessagingConversationButtonWrapper,
+		.embeddedMessagingConversationButtonWrapper .embeddedMessagingConversationButton {
+			left: 20px !important;
+			right: auto !important;
+			bottom: 20px !important;
+			position: fixed !important;
+		}
+
+
 		/* ✅ Mobile responsive fix */
 		@media only screen and (max-width: 768px) {
 
@@ -140,6 +150,37 @@
 	<script type='text/javascript'
 		src='https://orgfarm-7462475774-dev-ed.develop.my.site.com/ESWHealthCareSiteNetlify1761819246703/assets/js/bootstrap.min.js'
 		onload='initEmbeddedMessaging()'></script>
+	<script>
+		function fixChatPosition() {
+			const selectors = [
+				'.embeddedServiceHelpButton',
+				'iframe.embeddedMessagingFrame',
+				'.embeddedServiceSidebar',
+				'.embeddedServiceSidebarContainer',
+				'.embeddedMessagingConversationButtonWrapper'
+			];
+
+			selectors.forEach(sel => {
+				document.querySelectorAll(sel).forEach(el => {
+					el.style.setProperty('left', '20px', 'important');
+					el.style.setProperty('right', 'auto', 'important');
+					el.style.setProperty('position', 'fixed', 'important');
+				});
+			});
+		}
+
+		// Run after Salesforce finishes loading
+		const observer = new MutationObserver(() => {
+			fixChatPosition();
+		});
+
+		observer.observe(document.body, { childList: true, subtree: true });
+
+		window.addEventListener('load', () => {
+			setTimeout(fixChatPosition, 2000); // ensure chat is initialized
+		});
+	</script>
+
 </body>
 
 </html>
